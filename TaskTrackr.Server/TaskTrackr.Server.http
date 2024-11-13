@@ -1,0 +1,6 @@
+@TaskTrackr.Server_HostAddress = http://localhost:5074
+
+GET {{TaskTrackr.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
