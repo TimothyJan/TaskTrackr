@@ -1,0 +1,9 @@
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.csproj.AssemblyReference.cache
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\spa.proxy.json
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.AssemblyInfoInputs.cache
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.AssemblyInfo.cs
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.csproj.CoreCompileInputs.cache
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\janti\OneDrive\Documents\GitHub\TaskTrackr\TaskTrackr.Server\obj\Debug\net8.0\TaskTrackr.Server.sourcelink.json
