@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\tasktrackrdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\tasktrackrdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T06:07:53.48Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -40,6 +35,45 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TaskTrackrDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T17:54:03.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAuwDQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T17:38:32.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Program.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T06:07:53.48Z",
+              "EditorCaption": ""
             }
           ]
         },

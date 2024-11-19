@@ -9,17 +9,15 @@ namespace TaskTrackr.Server
         {
         }
 
-        // Define DbSets for each entity to represent database tables
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectTask> ProjectTasks { get; set; }
 
-        // Configure relationships and constraints using Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure the User entity
+            // Configure entities
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.UserId);
@@ -28,7 +26,6 @@ namespace TaskTrackr.Server
                 entity.Property(e => e.Role).IsRequired().HasMaxLength(20);
             });
 
-            // Configure the Project entity
             modelBuilder.Entity<Project>(entity =>
             {
                 entity.HasKey(e => e.ProjectId);
@@ -36,14 +33,12 @@ namespace TaskTrackr.Server
                 entity.Property(e => e.Description).HasMaxLength(500);
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
 
-                // Define one-to-many relationship with ProjectTasks
                 entity.HasMany(e => e.ProjectTasks)
                       .WithOne()
                       .HasForeignKey(t => t.ProjectId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
-            // Configure the ProjectTask entity
             modelBuilder.Entity<ProjectTask>(entity =>
             {
                 entity.HasKey(e => e.ProjectTaskId);
@@ -52,12 +47,14 @@ namespace TaskTrackr.Server
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.Progress).IsRequired().HasDefaultValue(0);
 
-                // Define foreign key relationship with User (AssignedUserId)
                 entity.HasOne<User>()
                       .WithMany()
                       .HasForeignKey(e => e.AssignedUserId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
+
+            // Seed data
+            SeedData.ApplySeedData(modelBuilder);
         }
     }
 }

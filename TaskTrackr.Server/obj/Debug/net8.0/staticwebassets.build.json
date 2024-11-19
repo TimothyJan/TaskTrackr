@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "PP1gHdRltgJFyC2gjPECLnREkT1CIkDLQSMX6TBIcFg=",
+  "Source": "TaskTrackr.Server",
+  "BasePath": "_content/TaskTrackr.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\tasktrackr.client\\tasktrackr.client.esproj",
+      "Version": 2,
+      "Source": "tasktrackr.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
