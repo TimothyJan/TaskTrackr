@@ -1,0 +1,66 @@
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Project } from '../models/project.model';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProjectService {
+
+  private projectsChangedSource = new Subject<void>();  // Emit events when department is added
+  projectsChanged$ = this.projectsChangedSource.asObservable();
+
+  private projects: Project[] = [
+    new Project(1, 'Project Alpha', 'First project', 'Active'),
+    new Project(2, 'Project Beta', 'Second project', 'Completed'),
+  ];
+
+  constructor() {}
+
+  // Get all projects
+  getProjects(): Project[] {
+    return this.projects;
+  }
+
+  /** Get list of all projectIds */
+  getListOfProjectIds(): number[] {
+    let listOfProjectIds: number[] = [];
+    this.projects.forEach((project) => {
+      listOfProjectIds.push(project.projectId);
+    });
+    return listOfProjectIds;
+  }
+
+  // Get a project by ID
+  getProjectById(projectId: number): Project {
+    return this.projects.find((project) => project.projectId === projectId)!;
+  }
+
+  // Add a new project
+  addProject(newProject: Project): void {
+    newProject.projectId = this.projects.length+1;
+    this.projects.push(newProject);
+  }
+
+  // Update an existing project
+  updateProject(updatedProject: Project): void {
+    const index = this.projects.findIndex((project) => project.projectId === updatedProject.projectId);
+    if (index !== -1) {
+      this.projects[index] = updatedProject;
+    }
+  }
+
+  // Delete a project
+  deleteProject(projectId: number): void {
+    const index = this.projects.findIndex(project => project.projectId === projectId);
+    if (index !== -1) {
+      this.projects.splice(index, 1);
+      this.projectsChangedSource.next(); // Notify subscribers that the project list has changed
+    }
+  }
+
+  /** Emit events for projects update */
+  notifyProjectsChanged(): void {
+    this.projectsChangedSource.next();
+  }
+}
