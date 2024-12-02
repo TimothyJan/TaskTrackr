@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserModalComponent } from './components/user-list/user-modal/user-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProjectListComponent } from './components/project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { UserModalComponent } from './components/user-list/user-modal/user-modal
     HeaderComponent,
     FooterComponent,
     UserListComponent,
-    UserModalComponent
+    UserModalComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
