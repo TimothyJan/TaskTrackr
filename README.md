@@ -35,7 +35,7 @@ Process:
   </li>
   <li>ASP.NET MVC
     <ul>
-      <li>Create Models(User, Project, ProjectTask, Milestone) with data annotations.</li>
+      <li>Create Models(User, Project, ProjectTask) with data annotations.</li>
       <li>Create DTOs to transfer only the required data between the client and server. Also to avoid exposing the navigation properties that cause cycles.</li>
       <li>Add Required NuGet Packages
         <ul>
@@ -73,7 +73,9 @@ Process:
   </li>
   <li>Frontend(Angular)
     <ul>
-      <li></li>
+      <li>Create models(User, Project, ProjectTask).</li>
+      <li>Create services to handle communication with the database.</li>
+      <li>Install Bootstap: ~<code>npm install bootstrap</code></li>
     </ul>
   </li>
   <li>Create environments for development and production, specifically for connection string.</li>
