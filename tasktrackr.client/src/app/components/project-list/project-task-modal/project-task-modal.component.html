@@ -1,0 +1,97 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Task</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+</div>
+
+<div class="modal-body">
+  <form>
+    <!-- Task Name -->
+    <div class="mb-3">
+      <label for="taskName" class="form-label">Task Name</label>
+      <input
+        type="text"
+        [(ngModel)]="projectTask.title"
+        name="taskName"
+        class="form-control"
+        id="taskName"
+        [ngClass]="{'is-invalid': titleInvalid}"
+      />
+      <div *ngIf="titleInvalid" class="invalid-feedback">Task name is required.</div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea
+        [(ngModel)]="projectTask.description"
+        name="description"
+        class="form-control"
+        id="description"
+        rows="3"
+        placeholder="Enter project task description"
+        [ngClass]="{'is-invalid': descriptionInvalid}">
+      </textarea>
+      <div *ngIf="descriptionInvalid" class="invalid-feedback">Description is required.</div>
+    </div>
+
+    <!-- Start Date -->
+    <div class="mb-3">
+      <label for="startDate" class="form-label">Start Date</label>
+      <input
+        [(ngModel)]="startDateString"
+        type="date"
+        name="startDate"
+        class="form-control"
+        id="startDate"
+      />
+    </div>
+
+    <!-- Due Date -->
+    <div class="mb-3">
+      <label for="dueDate" class="form-label">Due Date</label>
+      <input
+        [(ngModel)]="dueDateString"
+        type="date"
+        name="dueDate"
+        class="form-control"
+        id="dueDate"
+      />
+    </div>
+
+    <!-- Status  -->
+    <div class="mb-3">
+      <label for="status" class="form-label">Status</label>
+      <select
+        [(ngModel)]="projectTask.status"
+        name="status"
+        class="form-select"
+        id="status"
+      >
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+
+    <!-- Assigned User Dropdown -->
+    <div class="mb-3">
+      <label for="assignedUser" class="form-label">Assigned User</label>
+      <select
+        [(ngModel)]="projectTask.assignedUserId"
+        name="assignedUser"
+        class="form-select"
+        id="assignedUser"
+      >
+        <option [value]="null">Unassigned</option>
+        <option *ngFor="let user of users" [value]="user.userId">
+          {{ user.name }} - {{ user.role }}
+        </option>
+      </select>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="addProjectTask()">Save Task</button>
+  <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
+</div>
