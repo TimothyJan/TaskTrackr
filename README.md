@@ -76,6 +76,7 @@ Process:
       <li>Create models(User, Project, ProjectTask).</li>
       <li>Create services to handle communication with the database.</li>
       <li>Install Bootstap: ~<code>npm install bootstrap</code></li>
+      <li>Create components for proejct-list and user-list.</li>
     </ul>
   </li>
   <li>Create environments for development and production, specifically for connection string.</li>

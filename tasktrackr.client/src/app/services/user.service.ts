@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { User } from '../models/user.model';
+import { environment } from '../../environments/environment';
+
+const apiUrl = `${environment.apiUrl}/user`;
 
 @Injectable({
   providedIn: 'root'
