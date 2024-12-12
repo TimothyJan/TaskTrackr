@@ -6,6 +6,16 @@ using TaskTrackr.Server.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins("https://127.0.0.1:4200") // Allow the Angular app to make requests
+              .AllowAnyMethod() // Allow any HTTP method (GET, POST, etc.)
+              .AllowAnyHeader(); // Allow any headers in the requests
+    });
+});
+
 builder.Services.AddDbContext<TaskTrackrDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -18,6 +28,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+app.UseCors("AllowAngularApp");
 
 if (app.Environment.IsDevelopment())
 {

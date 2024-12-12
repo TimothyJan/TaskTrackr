@@ -12,7 +12,7 @@ using TaskTrackr.Server;
 namespace TaskTrackr.Server.Migrations
 {
     [DbContext(typeof(TaskTrackrDbContext))]
-    [Migration("20241119172722_InitialCreate")]
+    [Migration("20241212180833_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -57,6 +57,26 @@ namespace TaskTrackr.Server.Migrations
                     b.HasKey("ProjectId");
 
                     b.ToTable("Projects");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectId = 1,
+                            Description = "First project",
+                            EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProjectName = "Project Alpha",
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Active"
+                        },
+                        new
+                        {
+                            ProjectId = 2,
+                            Description = "Second project",
+                            EndDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ProjectName = "Project Beta",
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Completed"
+                        });
                 });
 
             modelBuilder.Entity("TaskTrackr.Server.Models.ProjectTask", b =>
@@ -106,6 +126,56 @@ namespace TaskTrackr.Server.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("ProjectTasks");
+
+                    b.HasData(
+                        new
+                        {
+                            ProjectTaskId = 1,
+                            AssignedUserId = 2,
+                            Description = "Task for Project Alpha",
+                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Progress = 0,
+                            ProjectId = 1,
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Not Started",
+                            Title = "Task 1"
+                        },
+                        new
+                        {
+                            ProjectTaskId = 2,
+                            AssignedUserId = 3,
+                            Description = "Another Task for Project Alpha",
+                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Progress = 50,
+                            ProjectId = 1,
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "In Progress",
+                            Title = "Task 2"
+                        },
+                        new
+                        {
+                            ProjectTaskId = 3,
+                            AssignedUserId = 1,
+                            Description = "Task for Project Beta",
+                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Progress = 100,
+                            ProjectId = 2,
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Completed",
+                            Title = "Task 3"
+                        },
+                        new
+                        {
+                            ProjectTaskId = 4,
+                            AssignedUserId = 1,
+                            Description = "Another Task for Project Beta",
+                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Progress = 75,
+                            ProjectId = 2,
+                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "In Progress",
+                            Title = "Task 4"
+                        });
                 });
 
             modelBuilder.Entity("TaskTrackr.Server.Models.User", b =>
@@ -134,6 +204,29 @@ namespace TaskTrackr.Server.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1,
+                            Email = "alice@example.com",
+                            Name = "Alice Johnson",
+                            Role = "Manager"
+                        },
+                        new
+                        {
+                            UserId = 2,
+                            Email = "bob@example.com",
+                            Name = "Bob Smith",
+                            Role = "Developer"
+                        },
+                        new
+                        {
+                            UserId = 3,
+                            Email = "charlie@example.com",
+                            Name = "Charlie Brown",
+                            Role = "Tester"
+                        });
                 });
 
             modelBuilder.Entity("TaskTrackr.Server.Models.ProjectTask", b =>

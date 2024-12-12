@@ -20,6 +20,8 @@ export class ProjectTaskModalComponent {
   titleInvalid: boolean = false;
   descriptionInvalid: boolean = false;
 
+  isLoading: boolean = false;
+
   @Output() taskCreated = new EventEmitter<ProjectTask>();
 
   constructor(
@@ -42,7 +44,17 @@ export class ProjectTaskModalComponent {
 
   /** Gets all users */
   getUsers(): void {
-    this.users = this._userService.getUsers();
+    this._userService.getUsers()
+    .subscribe({
+      next: (data) => {
+        this.users = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.log(error.message);
+        this.isLoading = false;
+      }
+    });
   }
 
   /** Validation for title and description */

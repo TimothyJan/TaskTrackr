@@ -11,6 +11,7 @@ import { UserModalComponent } from './user-modal/user-modal.component';
 })
 export class UserListComponent {
   listOfUserIds: number[] = [];
+  isLoading: boolean = false;
 
   constructor(
     private _userService: UserService,
@@ -24,7 +25,17 @@ export class UserListComponent {
 
   /** Get all users */
    getUsers(): void {
-    this.users = this._userService.getUsers();
+    this._userService.getUsers()
+    .subscribe({
+      next: (data) => {
+        this.users = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.log(error.message);
+        this.isLoading = false;
+      }
+    });
   }
 
   /** Open UserModal */

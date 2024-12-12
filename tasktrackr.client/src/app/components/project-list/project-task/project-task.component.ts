@@ -23,6 +23,8 @@ export class ProjectTaskComponent {
 
   users: User[] = [];
 
+  isLoading: boolean = false;
+
   constructor(
     private _projectTaskService: ProjectTaskService,
     private _userService: UserService
@@ -78,7 +80,17 @@ export class ProjectTaskComponent {
 
   /** Gets all users */
   getUsers(): void {
-    this.users = this._userService.getUsers();
+    this._userService.getUsers()
+    .subscribe({
+      next: (data) => {
+        this.users = data;
+        this.isLoading = false;
+      },
+      error: (error) => {
+        console.log(error.message);
+        this.isLoading = false;
+      }
+    });
   }
 
   /** Get User by userId */
