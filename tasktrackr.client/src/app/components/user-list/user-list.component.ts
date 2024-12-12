@@ -10,15 +10,13 @@ import { UserModalComponent } from './user-modal/user-modal.component';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
-  listOfUserIds: number[] = [];
-  isLoading: boolean = false;
+  users:User[] = [];
 
   constructor(
     private _userService: UserService,
     private modalService: NgbModal
   ) {}
 
-  users:User[] = [];
   ngOnInit(): void {
     this.getUsers();
   }
@@ -29,11 +27,9 @@ export class UserListComponent {
     .subscribe({
       next: (data) => {
         this.users = data;
-        this.isLoading = false;
       },
       error: (error) => {
         console.log(error.message);
-        this.isLoading = false;
       }
     });
   }
@@ -68,6 +64,17 @@ export class UserListComponent {
   /** Delete User */
   deleteUser(userId: number): void {
     this._userService.deleteUser(userId);
+    if (confirm('Are you sure you want to delete this department?')) {
+      this._userService.deleteUser(userId)
+        .subscribe({
+          next: () => {
+            this.getUsers();
+          },
+          error: (error) => {
+            console.log(error.message);
+          }
+        });
+    }
     this.getUsers();
   }
 }

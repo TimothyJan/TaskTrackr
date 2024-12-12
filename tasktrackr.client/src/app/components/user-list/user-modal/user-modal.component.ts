@@ -15,8 +15,8 @@ export class UserModalComponent {
   emailInvalid: boolean = false;
   roleInvalid: boolean = false;
 
-   // Regular expression to validate XXX@XXX.com format
-   private emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // Regular expression to validate XXX@XXX.com format
+  private emailRegex: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   constructor(
     private activeModal: NgbActiveModal,
@@ -43,10 +43,15 @@ export class UserModalComponent {
       return; // Prevent saving if there are validation errors
     }
 
-    this._userService.addUser(this.user);
-
-    this.clearForm();
-    this.closeModal();
+    this._userService.addUser(this.user).subscribe({
+      next: () => {
+        this.clearForm();
+        this.closeModal();
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Edit User */
@@ -57,10 +62,17 @@ export class UserModalComponent {
       return; // Prevent saving if there are validation errors
     }
 
-    this._userService.updateUser(this.user);
+    this._userService.updateUser(this.user)
+    .subscribe({
+      next: () => {
+        this.clearForm();
+        this.closeModal();
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
 
-    this.clearForm();
-    this.closeModal();
   }
 
   /** Close the Modal */
