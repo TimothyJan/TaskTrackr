@@ -78,14 +78,20 @@ export class ProjectTaskModalComponent {
     this.projectTask.assignedUserId = Number(this.projectTask.assignedUserId);
 
     // Add ProjectTask
-    this._projectTaskService.addProjectTask(this.projectTask);
+    this._projectTaskService.addProjectTask(this.projectTask)
+    .subscribe({
+      next: () => {
+        // Clear the form
+        this.projectTask = new ProjectTask(0, 0, "", "", "Not Started", 0);
+        this.startDateString = '';
+        this.dueDateString = '';
 
-    // Clear the form
-    this.projectTask = new ProjectTask(0, 0, "", "", "Not Started", 0);
-    this.startDateString = '';
-    this.dueDateString = '';
-
-    this.closeModal();
+        this.closeModal();
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Close the Modal */

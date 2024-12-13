@@ -38,7 +38,7 @@ export class ProjectModalComponent {
       return; // Prevent saving if there are validation errors
     }
 
-    this._projectService.addProject(this.project);
+    this._projectService.addProject(this.project)
 
     this.closeModal();
   }

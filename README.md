@@ -60,7 +60,6 @@ Process:
         <ul>
           <li>Add Migration: ~<code>dotnet ef migrations add InitialCreate</code></li>
           <li>Apply Migration: ~<code>dotnet ef database update</code></li>
-          <li></li>
         </ul>
       </li>
       <li>Seed database wtih dummy data
@@ -71,7 +70,6 @@ Process:
             <ul>
               <li>Add Migration: ~<code>dotnet ef migrations add SeedDataMigration</code></li>
               <li>Apply Migration: ~<code>dotnet ef database update</code></li>
-              <li></li>
             </ul>
           </li>
         </ul>
@@ -93,7 +91,7 @@ Process:
 
 Archived Process:
 <ul>
-  <li>SQL Server on AWS
+  <li>SQL Server on AWS RDS
     <ul>
       <li>CANCELED AWS DUE TO COSTS</li>
       <li>Go to <a href="https://aws.amazon.com/">AWS</a> and create an account.</li>

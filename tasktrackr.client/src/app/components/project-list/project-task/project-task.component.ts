@@ -38,7 +38,15 @@ export class ProjectTaskComponent {
 
   /** Get ProjectTask by ID */
   getProjectTaskById(): void {
-    this.projectTask = this._projectTaskService.getProjectTaskById(this.projectTaskId);
+    this._projectTaskService.getProjectTaskById(this.projectTaskId)
+    .subscribe({
+      next: (data) => {
+        this.projectTask = data;
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
 
     // Sync date strings
     this.syncDateStrings();
@@ -120,20 +128,33 @@ export class ProjectTaskComponent {
     this.projectTask.assignedUserId = Number(this.projectTask.assignedUserId);
 
     // Update ProjectTask
-    this._projectTaskService.updateProjectTask(this.projectTask);
+    this._projectTaskService.updateProjectTask(this.projectTask)
+    .subscribe({
+      next: () => {
+        // Refresh the projectTask from the service after saving
+        this.getProjectTaskById();
 
-    // Refresh the projectTask from the service after saving
-    this.getProjectTaskById();
-
-    // Notify other components and exit edit mode
-    this.editMode = false;
+        // Notify other components and exit edit mode
+        this.editMode = false;
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Delete ProjectTask */
   deleteProjectTask(): void {
-    const confirmDelete = confirm('Are you sure you want to delete this projectTask?');
-    if (confirmDelete) {
-      this._projectTaskService.deleteProjectTask(this.projectTaskId);
+    if (confirm('Are you sure you want to delete this department?')) {
+      this._projectTaskService.deleteProjectTask(this.projectTaskId)
+        .subscribe({
+          next: () => {
+            //NEED TO EMIT THAT PROJECTTASKIDS HAVE CHANGED
+          },
+          error: (error) => {
+            console.log(error.message);
+          }
+        });
     }
   }
 }

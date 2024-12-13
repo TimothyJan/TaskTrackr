@@ -62,5 +62,18 @@ namespace TaskTrackr.Server.Controllers
             var success = await _taskRepository.DeleteTaskAsync(id);
             return success ? NoContent() : NotFound();
         }
+
+        // GET: api/ProjectTask/GetTaskIdsByProjectId/{projectId}
+        [HttpGet("GetTaskIdsByProjectId/{projectId}")]
+        public async Task<ActionResult<IEnumerable<int>>> GetTaskIdsByProjectId(int projectId)
+        {
+            var taskIds = await _taskRepository.GetTaskIdsByProjectIdAsync(projectId);
+            if (!taskIds.Any())
+            {
+                return NotFound($"No tasks found for ProjectId: {projectId}");
+            }
+            return Ok(taskIds);
+        }
+
     }
 }

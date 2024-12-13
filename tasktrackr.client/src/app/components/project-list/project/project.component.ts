@@ -39,7 +39,15 @@ export class ProjectComponent {
 
   /** Get list of ProjectTaskIds by ProjectId */
   getListOfProjectTaskIdsByProjectId(): void {
-    this.listOfProjectTaskIds = this._projectTaskService.getListOfProjectTaskIdsByProjectIds(this.projectId);
+    this._projectTaskService.getTaskIdsByProjectId(this.projectId)
+    .subscribe({
+      next: (data) => {
+        this.listOfProjectTaskIds = data;
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Edit Mode */

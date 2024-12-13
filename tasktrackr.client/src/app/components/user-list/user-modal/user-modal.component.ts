@@ -43,7 +43,8 @@ export class UserModalComponent {
       return; // Prevent saving if there are validation errors
     }
 
-    this._userService.addUser(this.user).subscribe({
+    this._userService.addUser(this.user)
+    .subscribe({
       next: () => {
         this.clearForm();
         this.closeModal();
