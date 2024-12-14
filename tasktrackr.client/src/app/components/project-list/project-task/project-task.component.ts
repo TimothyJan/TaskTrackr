@@ -52,35 +52,6 @@ export class ProjectTaskComponent {
     this.syncDateStrings();
   }
 
-  /** Convert Date objects to yyyy-MM-dd strings for binding */
-  private syncDateStrings(): void {
-    this.startDateString = this.formatDate(this.projectTask.startDate!);
-    this.dueDateString = this.formatDate(this.projectTask.dueDate!);
-  }
-
-  /** Format a Date object to yyyy-MM-dd */
-  private formatDate(date: Date | string): string {
-    if (!date) return '';
-    const d = new Date(date);
-    const year = d.getFullYear();
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const day = String(d.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
-  }
-
-  /** Convert yyyy-MM-dd strings back to Date objects */
-  private parseDate(dateString: string): Date | null {
-    if (!dateString) return null;
-      const [year, month, day] = dateString.split('-').map(Number);
-    return new Date(year, month - 1, day); // Use local timezone interpretation
-  }
-
-  /** Validation for title and description */
-  validateFields(): void {
-    this.titleInvalid = !this.projectTask.title.trim();
-    this.descriptionInvalid = !this.projectTask.description.trim();
-  }
-
   /** Enter Edit mode for editing projectTask list */
   enterEditMode(): void {
     this.editMode = true;
@@ -156,5 +127,34 @@ export class ProjectTaskComponent {
           }
         });
     }
+  }
+
+  /** Convert Date objects to yyyy-MM-dd strings for binding */
+  private syncDateStrings(): void {
+    this.startDateString = this.formatDate(this.projectTask.startDate!);
+    this.dueDateString = this.formatDate(this.projectTask.dueDate!);
+  }
+
+  /** Format a Date object to yyyy-MM-dd */
+  private formatDate(date: Date | string): string {
+    if (!date) return '';
+    const d = new Date(date);
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  /** Convert yyyy-MM-dd strings back to Date objects */
+  private parseDate(dateString: string): Date | null {
+    if (!dateString) return null;
+      const [year, month, day] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day); // Use local timezone interpretation
+  }
+
+  /** Validation for title and description */
+  validateFields(): void {
+    this.titleInvalid = !this.projectTask.title.trim();
+    this.descriptionInvalid = !this.projectTask.description.trim();
   }
 }

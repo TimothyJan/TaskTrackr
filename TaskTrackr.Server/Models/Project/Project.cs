@@ -21,7 +21,7 @@ namespace TaskTrackr.Server.Models
         public DateTime StartDate { get; set; }
 
         [Required]
-        public DateTime EndDate { get; set; }
+        public DateTime DueDate { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "Status cannot exceed 50 characters.")]

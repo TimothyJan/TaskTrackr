@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskTrackr.Server;
 
@@ -11,9 +12,11 @@ using TaskTrackr.Server;
 namespace TaskTrackr.Server.Migrations
 {
     [DbContext(typeof(TaskTrackrDbContext))]
-    partial class TaskTrackrDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241214005637_UpdateProjectSeedData")]
+    partial class UpdateProjectSeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,7 +38,7 @@ namespace TaskTrackr.Server.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ProjectName")
@@ -60,7 +63,7 @@ namespace TaskTrackr.Server.Migrations
                         {
                             ProjectId = 1,
                             Description = "First project",
-                            DueDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Alpha",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active"
@@ -69,7 +72,7 @@ namespace TaskTrackr.Server.Migrations
                         {
                             ProjectId = 2,
                             Description = "Second project",
-                            DueDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Beta",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Completed"

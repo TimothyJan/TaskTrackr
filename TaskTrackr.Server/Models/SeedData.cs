@@ -16,8 +16,8 @@ namespace TaskTrackr.Server
 
             // Seed Projects
             modelBuilder.Entity<Project>().HasData(
-                new Project { ProjectId = 1, ProjectName = "Project Alpha", Description = "First project", Status = "Active" },
-                new Project { ProjectId = 2, ProjectName = "Project Beta", Description = "Second project", Status = "Completed" }
+                new Project { ProjectId = 1, ProjectName = "Project Alpha", Description = "First project", Status = "Active", StartDate = new DateTime(2024, 11, 13), DueDate = new DateTime(2024, 12, 13) },
+                new Project { ProjectId = 2, ProjectName = "Project Beta", Description = "Second project", Status = "Completed", StartDate = new DateTime(2024, 11, 13), DueDate = new DateTime(2025, 1, 13) }
             );
 
             // Seed Project Tasks with correct ProjectId and assign to users
