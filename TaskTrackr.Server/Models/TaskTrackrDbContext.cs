@@ -32,11 +32,6 @@ namespace TaskTrackr.Server
                 entity.Property(e => e.ProjectName).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Description).HasMaxLength(500);
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
-
-                entity.HasMany(e => e.ProjectTasks)
-                      .WithOne()
-                      .HasForeignKey(t => t.ProjectId)
-                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<ProjectTask>(entity =>

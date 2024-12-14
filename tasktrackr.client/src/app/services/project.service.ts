@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Project } from '../models/project.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
+const apiUrl = `${environment.apiUrl}/project`;
 
 @Injectable({
   providedIn: 'root'
@@ -10,56 +14,42 @@ export class ProjectService {
   private projectsChangedSource = new Subject<void>();  // Emit events when department is added
   projectsChanged$ = this.projectsChangedSource.asObservable();
 
-  private projects: Project[] = [
-    new Project(1, 'Project Alpha', 'First project', 'Active'),
-    new Project(2, 'Project Beta', 'Second project', 'Completed'),
-  ];
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  /** Get all projects */
+  getProjects(): Observable<Project[]> {
+    return this.http.get<Project[]>(`${apiUrl}`);
+  }
 
-  // Get all projects
-  getProjects(): Project[] {
-    return this.projects;
+  /** Get a project by ID */
+  getProjectById(projectId: number): Observable<Project> {
+    return this.http.get<Project>(`${apiUrl}/${projectId}`);
+  }
+
+  /** Add a new project */
+  addProject(newProject: Project): Observable<Project> {
+    return this.http.post<Project>(`${apiUrl}`, newProject);
+  }
+
+  /** Update an existing project */
+  updateProject(updatedProject: Project): Observable<void> {
+    return this.http.put<void>(
+      `${apiUrl}/${updatedProject.projectId}`,
+      updatedProject
+    );
+  }
+
+  /** Delete a project */
+  deleteProject(projectId: number): Observable<void> {
+    return this.http.delete<void>(`${apiUrl}/${projectId}`);
   }
 
   /** Get list of all projectIds */
-  getListOfProjectIds(): number[] {
-    let listOfProjectIds: number[] = [];
-    this.projects.forEach((project) => {
-      listOfProjectIds.push(project.projectId);
-    });
-    return listOfProjectIds;
+  getListOfProjectIds(): Observable<number[]> {
+    return this.http.get<number[]>(`${apiUrl}/getAllProjectIds`);
   }
 
-  // Get a project by ID
-  getProjectById(projectId: number): Project {
-    return this.projects.find((project) => project.projectId === projectId)!;
-  }
-
-  // Add a new project
-  addProject(newProject: Project): void {
-    newProject.projectId = this.projects.length+1;
-    this.projects.push(newProject);
-  }
-
-  // Update an existing project
-  updateProject(updatedProject: Project): void {
-    const index = this.projects.findIndex((project) => project.projectId === updatedProject.projectId);
-    if (index !== -1) {
-      this.projects[index] = updatedProject;
-    }
-  }
-
-  // Delete a project
-  deleteProject(projectId: number): void {
-    const index = this.projects.findIndex(project => project.projectId === projectId);
-    if (index !== -1) {
-      this.projects.splice(index, 1);
-      this.projectsChangedSource.next(); // Notify subscribers that the project list has changed
-    }
-  }
-
-  /** Emit events for projects update */
+  /** Emit events for project updates */
   notifyProjectsChanged(): void {
     this.projectsChangedSource.next();
   }

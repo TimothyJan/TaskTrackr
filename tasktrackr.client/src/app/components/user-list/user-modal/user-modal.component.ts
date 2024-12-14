@@ -73,7 +73,6 @@ export class UserModalComponent {
         console.log(error.message);
       }
     });
-
   }
 
   /** Close the Modal */

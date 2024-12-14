@@ -26,7 +26,5 @@ namespace TaskTrackr.Server.Models
         [Required]
         [StringLength(50, ErrorMessage = "Status cannot exceed 50 characters.")]
         public string Status { get; set; }
-
-        public List<ProjectTask> ProjectTasks { get; set; }
     }
 }

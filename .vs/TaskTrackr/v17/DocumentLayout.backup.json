@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\projecttask\\iprojecttaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\projecttask\\iprojecttaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\tasktrackrdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\tasktrackrdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\controllers\\projecttaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\controllers\\projecttaskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\projecttask\\projecttaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\projecttask\\projecttaskrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\project\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\project\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskTrackrDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\TaskTrackrDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T23:55:47.333Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -43,53 +48,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProjectTasksController.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Controllers\\ProjectTasksController.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Controllers\\ProjectTasksController.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Controllers\\ProjectTasksController.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Controllers\\ProjectTasksController.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAAAEEAAABBAAAAAAAAAA==",
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\Project\\Project.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\Project\\Project.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\Project\\Project.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\Project\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T22:27:44.985Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProjectTaskRepository.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\ProjectTask\\ProjectTaskRepository.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\ProjectTask\\ProjectTaskRepository.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\ProjectTask\\ProjectTaskRepository.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Models\\ProjectTask\\ProjectTaskRepository.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T22:27:31.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "IProjectTaskRepository.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\ProjectTask\\IProjectTaskRepository.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\ProjectTask\\IProjectTaskRepository.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\ProjectTask\\IProjectTaskRepository.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Models\\ProjectTask\\IProjectTaskRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T22:23:35.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Program.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Program.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Program.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAD4vzsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-12T17:44:00.02Z",
+              "WhenOpened": "2024-12-13T23:56:12.007Z",
               "EditorCaption": ""
             }
           ]

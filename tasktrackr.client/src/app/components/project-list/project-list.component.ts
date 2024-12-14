@@ -22,7 +22,15 @@ export class ProjectListComponent {
 
   /** Get list of ProjectIds */
   getListOfProjectIds(): void {
-    this.listOfProjectIds = this._projectService.getListOfProjectIds();
+    this._projectService.getListOfProjectIds()
+    .subscribe({
+      next: (data) => {
+        this.listOfProjectIds = data;
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Open ProjectModal and refresh list of ProjectIds  */

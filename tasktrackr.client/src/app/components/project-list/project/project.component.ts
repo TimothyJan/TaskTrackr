@@ -34,7 +34,15 @@ export class ProjectComponent {
 
   /** Get Project by ID */
   getProjectById(): void {
-    this.project = this._projectService.getProjectById(this.projectId);
+    this._projectService.getProjectById(this.projectId)
+    .subscribe({
+      next: (data) => {
+        this.project = data;
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Get list of ProjectTaskIds by ProjectId */
@@ -57,17 +65,29 @@ export class ProjectComponent {
 
   /** Save project and exit editMode */
   saveChanges(): void {
-    this._projectService.updateProject(this.project);
-    this._projectService.notifyProjectsChanged();
-    this.editMode = false; // Exit edit mode
+    this._projectService.updateProject(this.project)
+    .subscribe({
+      next: () => {
+        this.editMode = false; // Exit edit mode
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /**Delete Project */
   deleteProject(): void {
-    const confirmDelete = confirm('Are you sure you want to delete this projectTask?');
-    if (confirmDelete) {
-      this._projectService.deleteProject(this.project.projectId);
-      this._projectService.notifyProjectsChanged();
+    if (confirm('Are you sure you want to delete this department?')) {
+      this._projectService.deleteProject(this.project.projectId)
+        .subscribe({
+          next: () => {
+            //UPDATE DELETE PROJECT
+          },
+          error: (error) => {
+            console.log(error.message);
+          }
+        });
     }
   }
 

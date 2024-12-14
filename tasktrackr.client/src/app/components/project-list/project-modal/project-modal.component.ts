@@ -10,14 +10,23 @@ import { ProjectService } from '../../../services/project.service';
 })
 export class ProjectModalComponent {
   project: Project = new Project(0, "", "", "Not Started");
-
   nameInvalid: boolean = false;
   descriptionInvalid: boolean = false;
+
+  startDateString: string = '';
+  dueDateString: string = '';
 
   constructor(
     private activeModal: NgbActiveModal,
     private _projectService: ProjectService
   ) {}
+
+  /** Convert yyyy-MM-dd strings back to Date objects */
+  private parseDate(dateString: string): Date | null {
+    if (!dateString) return null;
+      const [year, month, day] = dateString.split('-').map(Number);
+    return new Date(year, month - 1, day); // Use local timezone interpretation
+  }
 
   /** Validation for name and description */
   validateFields(): void {
@@ -37,10 +46,19 @@ export class ProjectModalComponent {
     if (this.nameInvalid || this.descriptionInvalid) {
       return; // Prevent saving if there are validation errors
     }
+    // Update the projectTask dates with the converted values
+    this.project.startDate = this.parseDate(this.startDateString) || this.project.startDate;
+    this.project.dueDate = this.parseDate(this.dueDateString) || this.project.dueDate;
 
     this._projectService.addProject(this.project)
-
-    this.closeModal();
+    .subscribe({
+      next: () => {
+        this.closeModal();
+      },
+      error: (error) => {
+        console.log(error.message);
+      }
+    });
   }
 
   /** Close the Modal */

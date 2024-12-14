@@ -53,5 +53,10 @@ namespace TaskTrackr.Server.Repositories
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public async Task<IEnumerable<int>> GetAllProjectIdsAsync()
+        {
+            return await _context.Projects.Select(p => p.ProjectId).ToListAsync();
+        }
     }
 }
