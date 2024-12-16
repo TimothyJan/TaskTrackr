@@ -42,18 +42,17 @@ export class ProjectTaskComponent {
     .subscribe({
       next: (data) => {
         this.projectTask = data;
+        this.syncDateStrings();
       },
       error: (error) => {
         console.log(error.message);
       }
     });
-
-    // Sync date strings
-    this.syncDateStrings();
   }
 
   /** Enter Edit mode for editing projectTask list */
   enterEditMode(): void {
+    this.syncDateStrings();
     this.editMode = true;
   }
 

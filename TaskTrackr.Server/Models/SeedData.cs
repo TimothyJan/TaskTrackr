@@ -16,8 +16,22 @@ namespace TaskTrackr.Server
 
             // Seed Projects
             modelBuilder.Entity<Project>().HasData(
-                new Project { ProjectId = 1, ProjectName = "Project Alpha", Description = "First project", Status = "Active", StartDate = new DateTime(2024, 11, 13), DueDate = new DateTime(2024, 12, 13) },
-                new Project { ProjectId = 2, ProjectName = "Project Beta", Description = "Second project", Status = "Completed", StartDate = new DateTime(2024, 11, 13), DueDate = new DateTime(2025, 1, 13) }
+                new Project { 
+                    ProjectId = 1, 
+                    ProjectName = "Project Alpha", 
+                    Description = "First project", 
+                    Status = "Active", 
+                    StartDate = new DateTime(2024, 11, 13), 
+                    DueDate = new DateTime(2024, 12, 13) 
+                },
+                new Project { 
+                    ProjectId = 2, 
+                    ProjectName = "Project Beta", 
+                    Description = "Second project", 
+                    Status = "Completed", 
+                    StartDate = new DateTime(2024, 11, 13), 
+                    DueDate = new DateTime(2025, 1, 13) 
+                }
             );
 
             // Seed Project Tasks with correct ProjectId and assign to users
@@ -28,9 +42,10 @@ namespace TaskTrackr.Server
                     ProjectId = 1, // Task belongs to Project Alpha
                     Title = "Task 1",
                     Description = "Task for Project Alpha",
-                    Status = "Not Started",
-                    Progress = 0,
-                    AssignedUserId = 2 // Bob Smith
+                    Status = "Completed",
+                    AssignedUserId = 2, // Bob Smith
+                    StartDate = new DateTime(2024, 11, 13),
+                    DueDate = new DateTime(2024, 12, 13)
                 },
                 new ProjectTask
                 {
@@ -39,8 +54,9 @@ namespace TaskTrackr.Server
                     Title = "Task 2",
                     Description = "Another Task for Project Alpha",
                     Status = "In Progress",
-                    Progress = 50,
-                    AssignedUserId = 3 // Charlie Brown
+                    AssignedUserId = 3, // Charlie Brown
+                    StartDate = new DateTime(2024, 12, 13),
+                    DueDate = new DateTime(2024, 1, 13)
                 },
                 new ProjectTask
                 {
@@ -48,9 +64,10 @@ namespace TaskTrackr.Server
                     ProjectId = 2, // Task belongs to Project Beta
                     Title = "Task 3",
                     Description = "Task for Project Beta",
-                    Status = "Completed",
-                    Progress = 100,
-                    AssignedUserId = 1 // No assigned user
+                    Status = "Not Started",
+                    AssignedUserId = 1, // No assigned user
+                    StartDate = new DateTime(2025, 1, 13),
+                    DueDate = new DateTime(2025, 2, 13)
                 },
                 new ProjectTask
                 {
@@ -59,8 +76,9 @@ namespace TaskTrackr.Server
                     Title = "Task 4",
                     Description = "Another Task for Project Beta",
                     Status = "In Progress",
-                    Progress = 75,
-                    AssignedUserId = 1 // Alice Johnson
+                    AssignedUserId = 1, // Alice Johnson
+                    StartDate = new DateTime(2024, 11, 13),
+                    DueDate = new DateTime(2025, 2, 13)
                 }
             );
         }

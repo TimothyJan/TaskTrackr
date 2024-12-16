@@ -40,7 +40,6 @@ namespace TaskTrackr.Server
                 entity.Property(e => e.Title).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Description).HasMaxLength(500);
                 entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
-                entity.Property(e => e.Progress).IsRequired().HasDefaultValue(0);
 
                 entity.HasOne<User>()
                       .WithMany()

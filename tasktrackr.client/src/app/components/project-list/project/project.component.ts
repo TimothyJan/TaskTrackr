@@ -46,7 +46,7 @@ export class ProjectComponent {
     .subscribe({
       next: (data) => {
         this.project = data;
-        console.log(this.project);
+        this.syncDateStrings();
       },
       error: (error) => {
         console.log(error.message);

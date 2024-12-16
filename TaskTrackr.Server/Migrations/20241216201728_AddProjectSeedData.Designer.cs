@@ -12,8 +12,8 @@ using TaskTrackr.Server;
 namespace TaskTrackr.Server.Migrations
 {
     [DbContext(typeof(TaskTrackrDbContext))]
-    [Migration("20241214005637_UpdateProjectSeedData")]
-    partial class UpdateProjectSeedData
+    [Migration("20241216201728_AddProjectSeedData")]
+    partial class AddProjectSeedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,7 @@ namespace TaskTrackr.Server.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<DateTime>("EndDate")
+                    b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ProjectName")
@@ -63,7 +63,7 @@ namespace TaskTrackr.Server.Migrations
                         {
                             ProjectId = 1,
                             Description = "First project",
-                            EndDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Alpha",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active"
@@ -72,7 +72,7 @@ namespace TaskTrackr.Server.Migrations
                         {
                             ProjectId = 2,
                             Description = "Second project",
-                            EndDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Beta",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Completed"
@@ -97,11 +97,6 @@ namespace TaskTrackr.Server.Migrations
 
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Progress")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValue(0);
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
@@ -131,11 +126,10 @@ namespace TaskTrackr.Server.Migrations
                             ProjectTaskId = 1,
                             AssignedUserId = 2,
                             Description = "Task for Project Alpha",
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Progress = 0,
+                            DueDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectId = 1,
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Not Started",
+                            StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Completed",
                             Title = "Task 1"
                         },
                         new
@@ -143,10 +137,9 @@ namespace TaskTrackr.Server.Migrations
                             ProjectTaskId = 2,
                             AssignedUserId = 3,
                             Description = "Another Task for Project Alpha",
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Progress = 50,
+                            DueDate = new DateTime(2024, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectId = 1,
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "In Progress",
                             Title = "Task 2"
                         },
@@ -155,11 +148,10 @@ namespace TaskTrackr.Server.Migrations
                             ProjectTaskId = 3,
                             AssignedUserId = 1,
                             Description = "Task for Project Beta",
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Progress = 100,
+                            DueDate = new DateTime(2025, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectId = 2,
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Completed",
+                            StartDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Status = "Not Started",
                             Title = "Task 3"
                         },
                         new
@@ -167,10 +159,9 @@ namespace TaskTrackr.Server.Migrations
                             ProjectTaskId = 4,
                             AssignedUserId = 1,
                             Description = "Another Task for Project Beta",
-                            DueDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Progress = 75,
+                            DueDate = new DateTime(2025, 2, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectId = 2,
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "In Progress",
                             Title = "Task 4"
                         });

@@ -20,6 +20,10 @@ namespace TaskTrackr.Server.Models
         [StringLength(500, ErrorMessage = "Description cannot exceed 500 characters.")]
         public string Description { get; set; }
 
+        [Required]
+        [StringLength(50, ErrorMessage = "Status cannot exceed 50 characters.")]
+        public string Status { get; set; }
+
         [ForeignKey("User")]
         public int AssignedUserId { get; set; }
 
@@ -28,12 +32,5 @@ namespace TaskTrackr.Server.Models
 
         [Required]
         public DateTime DueDate { get; set; }
-
-        [Required]
-        [StringLength(50, ErrorMessage = "Status cannot exceed 50 characters.")]
-        public string Status { get; set; }
-
-        [Range(0, 100, ErrorMessage = "Progress must be between 0 and 100.")]
-        public int Progress { get; set; }
     }
 }

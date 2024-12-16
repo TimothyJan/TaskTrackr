@@ -12,6 +12,5 @@ namespace TaskTrackr.Server.Repositories
         Task<bool> UpdateTaskAsync(ProjectTask task);
         Task<bool> DeleteTaskAsync(int id);
         Task<IEnumerable<int>> GetTaskIdsByProjectIdAsync(int projectId);
-
     }
 }
