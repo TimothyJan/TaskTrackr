@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PP1gHdRltgJFyC2gjPECLnREkT1CIkDLQSMX6TBIcFg=",
+  "Hash": "XbSRMJYBtH31QqoRIjuoas4utUcbvgQJlwE7tg2i0J4=",
   "Source": "TaskTrackr.Server",
   "BasePath": "_content/TaskTrackr.Server",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "tasktrackr.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

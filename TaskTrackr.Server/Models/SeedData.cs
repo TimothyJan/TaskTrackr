@@ -22,13 +22,13 @@ namespace TaskTrackr.Server
                     Description = "First project", 
                     Status = "Active", 
                     StartDate = new DateTime(2024, 11, 13), 
-                    DueDate = new DateTime(2024, 12, 13) 
+                    DueDate = new DateTime(2025, 11, 13) 
                 },
                 new Project { 
                     ProjectId = 2, 
                     ProjectName = "Project Beta", 
                     Description = "Second project", 
-                    Status = "Completed", 
+                    Status = "Active", 
                     StartDate = new DateTime(2024, 11, 13), 
                     DueDate = new DateTime(2025, 1, 13) 
                 }

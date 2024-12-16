@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|c:\\users\\janti\\onedrive\\documents\\github\\tasktrackr\\tasktrackr.server\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E053BC5-F966-4642-8A28-78C242E5833F}|TaskTrackr.Server\\TaskTrackr.Server.csproj|solutionrelative:tasktrackr.server\\models\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T22:33:34.465Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"

@@ -12,8 +12,8 @@ using TaskTrackr.Server;
 namespace TaskTrackr.Server.Migrations
 {
     [DbContext(typeof(TaskTrackrDbContext))]
-    [Migration("20241216201728_AddProjectSeedData")]
-    partial class AddProjectSeedData
+    [Migration("20241216223932_AddSeedData")]
+    partial class AddSeedData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,7 +63,7 @@ namespace TaskTrackr.Server.Migrations
                         {
                             ProjectId = 1,
                             Description = "First project",
-                            DueDate = new DateTime(2024, 12, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DueDate = new DateTime(2025, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Alpha",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Active"
@@ -75,7 +75,7 @@ namespace TaskTrackr.Server.Migrations
                             DueDate = new DateTime(2025, 1, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             ProjectName = "Project Beta",
                             StartDate = new DateTime(2024, 11, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Completed"
+                            Status = "Active"
                         });
                 });
 
