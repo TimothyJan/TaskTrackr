@@ -64,7 +64,7 @@ export class ProjectComponent {
         this.listOfProjectTaskIds = data;
       },
       error: (error) => {
-        console.log(error.message);
+        // console.log(error.message);
       }
     });
   }
@@ -103,7 +103,7 @@ export class ProjectComponent {
       this._projectService.deleteProject(this.project.projectId)
         .subscribe({
           next: () => {
-            //UPDATE DELETE PROJECT
+            this._projectService.notifyProjectsChanged();
           },
           error: (error) => {
             console.log(error.message);
