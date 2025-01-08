@@ -30,7 +30,6 @@ Process:
             </ul>
           </li>
           <li>In the left panel, go to <strong>User Mapping</strong>, check your database (TaskTrackrDb), and assign the db_owner role.</li>
-          <li></li>
         </ul>
       </li>
       <li>Configure the Connection String in appsettings.json
@@ -62,7 +61,7 @@ Process:
           <li>Apply Migration: ~<code>dotnet ef database update</code></li>
         </ul>
       </li>
-      <li>Seed database wtih dummy data
+      <li>Seed database with dummy data
         <ul>
           <li>Create SeedData.cs.</li>
           <li>Modify Program.cs to call the <code>SeedData.Initialize</code> method during application startup.</li>
@@ -83,7 +82,7 @@ Process:
       <li>Create models(User, Project, ProjectTask).</li>
       <li>Create services to handle communication with the database.</li>
       <li>Install Bootstap: ~<code>npm install bootstrap</code></li>
-      <li>Create components for proejct-list and user-list.</li>
+      <li>Create components for project-list and user-list.</li>
     </ul>
   </li>
   <li>Create environments for development and production, specifically for connection string.</li>

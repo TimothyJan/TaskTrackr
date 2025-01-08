@@ -14,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
-              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\SeedData.cs",
-              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
-              "RelativeToolTip": "TaskTrackr.Server\\Models\\SeedData.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T22:33:34.465Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
@@ -40,6 +27,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\janti\\OneDrive\\Documents\\GitHub\\TaskTrackr\\TaskTrackr.Server\\Models\\SeedData.cs",
+              "RelativeToolTip": "TaskTrackr.Server\\Models\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-07T20:05:44.569Z",
+              "EditorCaption": ""
             }
           ]
         },
